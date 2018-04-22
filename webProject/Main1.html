@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html >
+	<head>
+		<title>Code With Us</title>
+		<meta charset="utf_8">
+		<link rel="StyleSheet" href="style1.CSS" type="text/CSS">
+		<script src="javaD.JS" type="text/javaScript"></script>	
+		<script>
+			/*var van=document.getElementsByClassName('navbar');
+				widow.onscroll=function(){
+					if(window.pageYOffset<100){
+					nav.style.background="#007bff";
+					nav.style.boxShadow="0px 4px 2px #C71585";
+					}
+					else{
+					nav.style.background="transparent";
+					nav.style.boxShadow="none";
+					}
+				}*/
+				var index=1;
+
+				function pulsIndex(n){
+					index=index+n;
+					showImage(index);
+					
+				}
+				showImage(1);
+
+				function showImage(n){
+					var i;
+					var x=document.getElementsByClassName("slides");
+					if(n>x.length){index=1};
+					if(n<1){index=x.length};
+					for(i=0;i<x.length;i++){
+						x[i].style.display="none";		
+					}
+					x[index-1].style.display="block";
+				}
+				autoSlide();
+				function autoSlide(){
+				var i;
+					var x=document.getElementsByClassName("slides");
+				for(i=0;i<x.length;i++){
+						x[i].style.display="none";		
+					}
+					if(index >x.length){index=1};
+					x[index-1].style.display="block";
+					index++;
+					setTimeout(autoSlide,1000);
+				}
+
+		</script>
+	
+	</head>
+	
+	<body onload="autoSlide()">
+			<!--<section class="navbar">
+			
+				<div class="dd">
+					<a href="signin.html"><img src="if_Sign In_20297.png" class="img" ></a></br>
+					<a class="aa" href="signin.html">Sign In</a>
+				</div>
+				
+				<div class="dd">
+					<a  href="create.html"><img src="if_wooman_196740.png" class="img" ></a></br>
+					<a class="aa" href="create.html">Create Account</a>
+				</div>
+				<div class="dd">
+					<a><img src="if_Help_1493288.png" class="img" ></a></br>
+					<a class="aa">About..</a>
+				</div>
+				
+			</section>-->
+			<div class="header">
+				<div class="navbar">
+					<ul>
+						<li class="lists"><a href="signin.html"><img src="if_Sign In_20297.png" class="img" ></a></br>
+						<a class="aa" href="signin.html">Sign In</a></li>
+						
+						<li class="lists"><a  href="create.html"><img src="if_wooman_196740.png" class="img" ></a></br>
+						<a class="aa" href="create.html">Create Account</a></li>
+						
+						<li class="lists"><a><img src="if_Help_1493288.png" class="img" ></a></br>
+						<a class="aa">About..</a></li>
+					</ul>	
+				</div>
+			</div>
+			
+			<div class="header2">
+				<div class="navbar2">
+					<ul>
+						<li class="lists2"><img src="if_letter_C_blue_1553099.png" class="img2"> </li>
+						<li class="lists2"><img src="if_lowercase_letter_o_blue_3052286.png" class="img2"></li>
+						<li class="lists2"><img src="if_lowercase_letter_d_blue_3052308.png" class="img2"></li>
+						<li class="lists2"><img src="if_lowercase_letter_e_blue_3052306.png" class="img2"></li></br></br>
+						
+						<li class="lists2"><img src="if_letter_W_blue_1553052.png" class="img2"> </li>
+						<li class="lists2"><img src="if_lowercase_letter_i_blue_3052298.png" class="img2"></li>
+						<li class="lists2"><img src="if_lowercase_letter_t_blue_3052276.png" class="img2"></li>
+						<li class="lists2"><img src="if_lowercase_letter_h_blue_3052300.png" class="img2"></li></br></br>
+						
+						<li class="lists2"><img src="if_letter_U_blue_1553046.png" class="img2"> </li>
+						<li class="lists2"><img src="if_lowercase_letter_s_blue_3052278.png" class="img2"></li>
+					</ul>
+					
+				</div>
+			</div>
+			
+			<div class="container">
+				
+					<img src="img1.jpg" class="slides">
+					<img src="img2.jpg" class="slides">
+					<img src="img3.jpg" class="slides">
+					<img src="bb.jpg" class="slides">
+					<img src="programmer-1.jpg" class="slides">
+					<button class="btn" id="btn1" onclick="pulsIndex(-1)">&#10094;</button>
+					<button class="btn" id="btn2"  onclick="pulsIndex(1)">&#10095;</button>
+			</div>
+			
+			<div class="languages">
+				<div class="dd"><img src="if_text-x-java_29094 (1).png" class="img3"></br><h3>java language</h3></div>
+				<div class="dd">div2</div>
+				<div class="dd">div3</div>
+				<div class="dd">div4</div>
+			
+			</div>
+
+				
+		<script src="jquery-3.3.1.min.js" type="text/javascript" ></script>
+		<script src="javaD.JS" type="text/javaScript"></script>
+	</body>
+
+</html>

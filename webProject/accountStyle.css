@@ -1,0 +1,111 @@
+body{
+	margin:0;
+	padding:0;
+	background-image:url(bb.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-attachment:fixed;
+	
+}
+.main,.signUpForm{
+	height:400px;
+	width:400px;
+	background-color:darkgray;
+	box-shadow:0 0 0 30px rgba(0,0,0,.5);
+	border-radius:50%;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%) rotateY(0deg);
+	
+	
+}
+table{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+#title{
+	font-family:calibri;
+	font-size:30px;
+	color:#222;
+	text-align:center;
+	
+}
+hr{
+	margin:5px auto;
+	padding:0px;
+}
+input[type="text"],input[type="password"],input[type="email"]{
+	height:20px;
+	width:250px;
+	font-family:sans-serif;
+	font-size:11px;
+	border-radius:35px;
+	border:none;
+	outline:none;
+	border:1px solid darkgray;
+	padding:20px;
+	background:rgba(0,0,0,.1);
+	
+}
+#ftr{
+	font-family:calibri;
+	font-size:12px;
+	color:#222;
+}
+#signInBtn,#signUpBtn{
+	height:35px;
+	width:250px;
+	font-family:calibri;
+	font-size:14px;
+	color:white;
+	line-height:0px;
+	border-radius:35px;
+	border:none;
+	outline:none;
+	background-color:#ff267e;
+	padding:20px;
+	cursor:pointer;
+}
+#signUpMsg,#signInMsg{
+	font-family:calibri;
+	font-size:12px;
+	color:#777;
+}
+a{
+	color:#313AA3;
+}
+.signUpForm{
+	display:none;
+}
+/*.main{
+	-webKit-backface-visibility:hidden;
+	-webKit-animation-duration:2s;
+}
+.signUpForm{
+	-webKit-backface-visibility:hidden;
+	-webKit-transform:translate(-50%,-50%) rotateY(180deg);
+	-webKit-animation-duration:2s;
+}
+
+@-webKit-kayframes showSignUp{
+	 0%{transform:translate(-50%,-50%) rotateY(0deg);}
+	100%{transform:translate(-50%,-50%) rotateY(180deg);}
+}
+
+@-webKit-kayframes hideSignIn{
+	0%{transform :translate(-50%,-50%) rotateY(180deg);}
+	100%{transform:translate(-50%,-50%) rotateY(0deg);}
+}
+
+@-webKit-kayframes showSignIn{
+	0%{transform:translate(-50%,-50%) rotateY(0deg);}
+	100%{transform:translate(-50%,-50%) rotateY(180deg);}
+}
+
+@-webKit-kayframes hideSignUp{
+	0%{transform:translate(-50%,-50%) rotateY(180deg);}
+	100%{transform:translate(-50%,-50%) rotateY(0deg);}
+}*/
