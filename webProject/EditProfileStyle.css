@@ -1,0 +1,119 @@
+body{
+    margin:0;
+    padding:0;
+
+}
+section{
+    width:100%;
+    min-height:400px;
+}
+.wave{
+    position:relative;
+    background:linear-gradient(90deg,#f0027f,#84b9ef);
+}
+.wave:before{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:225px;
+    background:url(wave.png);
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.container0{
+
+    width:600px ;
+    height: 440px;
+    position: relative;
+    left:25% ;
+    right: 25%;
+    bottom: 250px;
+    padding: 0;
+    margin: 0;
+}
+.profile{
+    height: 100%;
+    width: 50%;
+    float: left;
+    padding:60px 30px;
+    box-sizing:border-box;
+    background:#faa9e0;
+    border: 4px solid #75489f;
+    border-right: 0px;
+}
+.password{
+    height: 100%;
+    width: 50%;
+    float: right;
+    padding:60px 30px;
+    box-sizing:border-box;
+    background:#faa9e0;
+    border: 4px solid #75489f;
+}
+
+h2{
+    margin:0;
+    padding:0 0 20px;
+    color:		#75489f;
+    text-align:center;
+    font-family:OCR A Std, monospace;
+}
+.profile p,.password p{
+    margin:0;
+    padding:0;
+    font-weight:bold;
+    color:#75489f;
+    font-family:Comic Sans MS;
+
+}
+.profile input,.password input{
+    width:100%;
+    margin-bottom:20px;
+}
+.profile input[type="email"],input[type="password"],input[type="text"],.password input[type="password"]{
+    border:none;
+    border-bottom:1px solid #fff;
+    background:transparent;
+    outline:none;
+    height:40px;
+    color:#75489f;
+    font-size:14px;
+
+}
+.profile input[type="submit"],.password input[type="submit"]{
+    border:none;
+    outline:none;
+    height:40px;
+    color:white;
+    font-size:16px;
+    background:#ff267e;
+    border-radius:20px;
+    cursor:pointer;
+    font-family:Comic Sans MS;
+}
+
+
+.profile input[type="submit"]:hover,.password input[type="submit"]:hover{
+    background:#23b1a5;
+    color:#75489f;
+    font-family:Comic Sans MS;
+}
+.or{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color:#75489f;
+    left:280px;
+    top: 260px;
+    border-radius: 50%;
+    color:white;
+    text-align: center;
+}
+.or p{
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family:Comic Sans MS;
+}

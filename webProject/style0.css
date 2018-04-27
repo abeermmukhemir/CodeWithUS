@@ -176,8 +176,10 @@ h4{
 }
 
 .image1{
-	width:300px;
-	height:300px;
+	width:220px;
+	height:220px;
+	border-radius:20%;
+	margin-top: 50px;
 	/*margin-left:120px;*/
 }
 
@@ -191,8 +193,8 @@ h4{
 }
 
 .image2{
-	width:250px;
-	height:250px;
+	width:220px;
+	height:220px;
 	margin-top:80px;
 	border-radius:20%;
 	/*margin-left:30px;*/
@@ -202,8 +204,10 @@ h4{
 	margin-top:150px;
 }
 .image3{
-	width:300px;
-	height:300px;
+	width:220px;
+	height:220px;
+	border-radius:20%;
+	margin-top: 80px;
 /*margin-left:120px;*/
 }
 
@@ -213,8 +217,10 @@ h4{
 }
 
 .image4{
-	width:300px;
-	height:300px;
+	width:220px;
+	height:220px;
+	border-radius:20%;
+	margin-top: 90px;
 	/*margin-left:40px;*/
 }
 .container{
