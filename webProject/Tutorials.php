@@ -10,9 +10,7 @@
     elseif( ! isSet($_SESSION['lang_name'])){
         echo '<script> window.location="main2.php" </script>' ;
     }
-    else{
-        echo $_SERVER['PHP_SELF'];
-    }
+
 
     $sql=DBConnect()->prepare("SELECT * FROM tutorial WHERE tutorial.lang_name=?");
     $sql->bindParam(1,$_SESSION['lang_name']);

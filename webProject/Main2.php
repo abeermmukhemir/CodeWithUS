@@ -1,14 +1,16 @@
 <?php
 
+    include  __DIR__ ."/php/DBConnection.php";
+    include  __DIR__ ."/php/functions.php";
+
     session_start();
     if( ! isSet($_SESSION['user'])){
         echo '<script> window.location="login.php" </script>' ;
     }
-    else{
-        echo $_SERVER['PHP_SELF'];
-    }
 
-
+    $sql=DBConnect()->prepare("SELECT * FROM language WHERE 1");
+    $sql->execute();
+    $result = $sql->fetchAll();
 ?>
 
 
@@ -96,13 +98,35 @@
 
 
 	<div class="container" style="margin-top: 400px;background: white;width: 100%;height: 2000px">
-		<div class="row text-center" >
+        <div class="row text-center" style="margin-top: 500px">
+
+            <?php
+            $c=1;
+                foreach ($result as $raw){
+                    if($c%4===0)echo '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+                    echo '
+                           <div class="col-sm-12 col-md-4 col-lg-4">
+				            <div class="langBox" >
+					            <img src="' . $raw[1] . '" class="logo"><br>
+					            <h2> ' . $raw[0] . ' </h2>
+					            <p>??Choose How Whould you Like to Learn</p>
+					            <div class="d1"><img src="video.png" ><a href="Tutorials.php?lang_name='. $raw[0] . '">Tutorials</a></br></div>
+					            <div class="d2"><img src="book2.png" ><a href="References.php?lang_name='. $raw[0] . '">References</a></br></div>
+					            <div class="d3"><img src="manual2.png" ><a href="ExplanatoryText.php?lang_name='. $raw[0] . '">Explanatory text</a></div>
+					            <div class="d4"><img src="exam.png" ><a href="Quizzes.php?lang_name='. $raw[0] . '">Quizzes</a></div>
+
+				            </div>
+				         </div>';
+
+                    $c++;
+                }
+            ?>
+
+            <!--
 			<div class="col-sm-12 col-md-4 col-lg-4">
 				<div class="langBox" >
 					<img src="java2.png" class="logo"><br>
 					<h2>Java Language</h2>
-                    <?php $_SESSION['lang_name']="Java";
-                    ?>
 					<p>??Choose Hoow Whould Like to Learn</p>
 					<div class="d1"><img src="video.png" ><a href="Tutorials.php">Tutorials</a></br></div>
 					<div class="d2"><img src="book2.png" ><a href="References.php">References</a></br></div>
@@ -276,12 +300,9 @@
 
 						</div>
 
+                    -->
 
 				</div>
-
-
-
-
 	</div>
 
 

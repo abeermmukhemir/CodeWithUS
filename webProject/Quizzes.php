@@ -10,9 +10,6 @@
     elseif( ! isSet($_SESSION['lang_name'])){
         echo '<script> window.location="main2.php" </script>' ;
     }
-    else{
-        echo $_SERVER['PHP_SELF'];
-    }
 
     $sql=DBConnect()->prepare("SELECT * FROM quiz WHERE quiz.lang_name=?");
     $sql->bindParam(1,$_SESSION['lang_name']);
@@ -99,7 +96,7 @@
     <?php
     $i="0";
     foreach ($result as $raw){
-        echo '<a class="delete" id="delete' . $i .'" onclick="' . deletequiz() . '">&times;</a>';
+        echo '<a href="Quizzes.php" class="delete" id="delete' . $i .'" onclick= deletequizjs()>&times;</a>';
         echo '<a href="Quizzes.php?id=' . $raw[2] .'" id="' . $raw[2] . '">Level ' . $raw[0] . '</a>';
 
         //   echo '<a href="Quizzes.php?id=' . $raw[2] .'" id="' . $raw[2] . '">Level ' . $raw[0] . '</a><button class="delete" id="delete' . $i .'" onclick="' . deletequiz() . '"><img src="incorrect.png" ></button>';
@@ -107,10 +104,13 @@
     }
     ?>
     <button class="addition" id="addquiz"><img src="add.png"></button>
+    <form action="php/addquizcheck.php" method="POST" id="addquizform">
+        <input type="text" id="level" name="level" placeholder="level of quiz"><label for="level"></label>
+        <input type="submit" value="ADD">
+    </form>
 </div>
 
 <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="open">&#9776; Topic</span>
-
 
 
 <div class="container" >
@@ -165,6 +165,8 @@
         }
     ?>
 
+    <button id="submitanswers" onclick="">Submit Answers</button>
+
 
     <div class="row " id="newquestion" style="display: none">
         <div class="col-sm-0 col-md-2 col-lg-2">
@@ -178,7 +180,7 @@
                      //   array_pop($_SESSION);
                         }
                 ?>
-                <form action="php/addnewquestioncheck.php" method="POST">
+                <form action="php/addnewquestioncheck.php?id=<?php echo $_GET['id'];?>" method="POST">
                     <input type="text" id="question" name="question" placeholder="write question here">
                     <input type="text" id="answer1" name="answer1" placeholder="write answer 1">
                     <input type="text" id="answer2" name="answer2" placeholder="write answer 2">
@@ -204,11 +206,12 @@
         $sql4->execute();
     }
     function deletequiz(){
-        $sql4=DBConnect()->prepare("DELETE FROM quiz WHERE id=?");
+        $sql4=DBConnect()->prepare("DELETE FROM quiz WHERE quiz.id=?");
         $sql4->bindParam(1,$_GET['id']);
         $sql4->execute();
     //    echo '<script> window.location="Quizzes.php" </script>' ;
     }
+
 ?>
 
 <?php
@@ -233,8 +236,18 @@
 <script> document.getElementById("addnq").onclick=function(){
             document.getElementById("newquestion").style.display="initial";
     } </script>
+<script> document.getElementById("addquizform").style.display="none"; </script>
+<script> document.getElementById("addquiz").onclick=function(){
+        document.getElementById("addquizform").style.display="initial";
+    } </script>
 
-
+<script>
+    function deletequizjs() {
+        <?php
+            deletequiz();
+        ?>
+    }
+</script>
 
 
 <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
